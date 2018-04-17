@@ -40,6 +40,3 @@ def build_events(req: request) -> [Event]:
     serialized_events_list = api_mgr.serialize_event_list(events_objects_list)
 
     return serialized_events_list
-
-
-

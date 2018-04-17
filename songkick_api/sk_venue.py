@@ -26,4 +26,3 @@ class Venue(object):
              self.displayName,
              self.city,
              self.state)
-

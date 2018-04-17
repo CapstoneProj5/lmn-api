@@ -73,4 +73,3 @@ class Constructor:
         except IndexError:
             log('IndexError from build_event()')
             return False
-
