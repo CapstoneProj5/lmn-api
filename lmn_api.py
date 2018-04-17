@@ -6,8 +6,11 @@ from songkick_api import sk_api_mgr as api_mgr
 import config
 
 app = Flask(__name__)
+app.config['DEBUG'] = True
+app.config['SECRET_KEY'] = 'oh_pan_says_ta_me'
+app.config.from_object(__name__)
 
-app.config.from_object(config.DevelopmentConfig)
+# app.config.from_object(config.DevelopmentConfig)
 
 
 @app.route('/events')
