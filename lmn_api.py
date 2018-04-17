@@ -3,6 +3,7 @@ from flask import Flask, request, render_template, jsonify
 from songkick_api.sk_api_mgr import log
 from songkick_api.sk_event import Event
 from songkick_api import sk_api_mgr as api_mgr
+import os
 import config
 
 app = Flask(__name__)
@@ -49,4 +50,5 @@ def build_events(req: request) -> [Event]:
 
 
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
