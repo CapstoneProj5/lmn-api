@@ -3,8 +3,11 @@ from flask import Flask, request, render_template, jsonify
 from songkick_api.sk_api_mgr import log
 from songkick_api.sk_event import Event
 from songkick_api import sk_api_mgr as api_mgr
+import config
 
 app = Flask(__name__)
+
+app.config.from_object(config.DevelopmentConfig)
 
 
 @app.route('/events')
@@ -40,3 +43,7 @@ def build_events(req: request) -> [Event]:
     serialized_events_list = api_mgr.serialize_event_list(events_objects_list)
 
     return serialized_events_list
+
+
+if __name__ == '__main__':
+    app.run()

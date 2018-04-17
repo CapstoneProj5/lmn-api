@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "==2.18.4"
+certifi = "==2018.4.16"
+pipenv = "==11.10.0"
+virtualenv = "==15.2.0"
+virtualenv-clone = "==0.3.0"
+Flask = "==0.12.2"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
